@@ -1,6 +1,7 @@
 from distutils.core import setup
 from distutils.extension import Extension
 from Cython.Distutils import build_ext
+import numpy
 
 setup(name='liccy',
       version='0.1',
@@ -9,5 +10,6 @@ setup(name='liccy',
       author_email='msgordon.astro@gmail.com',
       cmdclass = {'build_ext': build_ext},
       ext_modules = [Extension("liccy",
-                               ["liccy.pyx"])]
+                               ["liccy.pyx"]),
+                     include_dirs=[numpy.get_include()]]
 )
