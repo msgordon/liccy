@@ -10,6 +10,6 @@ setup(name='liccy',
       author_email='msgordon.astro@gmail.com',
       cmdclass = {'build_ext': build_ext},
       ext_modules = [Extension("liccy",
-                               ["liccy.pyx"]),
-                     include_dirs=[numpy.get_include()]]
+                               ["liccy.pyx"],
+                               include_dirs=[numpy.get_include()])]
 )
